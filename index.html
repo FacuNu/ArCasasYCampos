@@ -1,190 +1,327 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agustin Rovira Inmobiliaria | Casas y Campos</title>
     <meta
       name="description"
-      content="Portfolio de edicion de video para redes sociales, YouTube, gaming y piezas profesionales."
-    />
-    <title>Portfolio Editor de Video | Reels, YouTube y Gaming</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      content="Casas, departamentos, terrenos y campos en Concordia y Entre Rios. Agustin Rovira Inmobiliaria."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Russo+One&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700&display=swap"
       rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
+    >
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
-    <header class="site-header" data-reveal>
-      <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <span class="brand-mark">N</span>
-        <span>Niano Cuts</span>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Agustin Rovira Inmobiliaria">
+        <img src="https://inmobiliariarovira.com.ar/web/image/website/1/logo?unique=e4ae51f" alt="Agustin Rovira Inmobiliaria">
+        <span>Casas y Campos</span>
       </a>
-      <nav class="nav" aria-label="Navegacion principal">
-        <a href="#trabajos">Trabajos</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#herramientas">Herramientas</a>
+      <nav class="main-nav" aria-label="Principal">
+        <a href="#inmuebles">Inmuebles</a>
+        <a href="#destacados">Destacados</a>
+        <a href="#nosotros">Quienes somos</a>
         <a href="#contacto">Contacto</a>
       </nav>
+      <a class="nav-action" href="https://wa.me/+543454939946">Consultar</a>
     </header>
 
     <main id="inicio">
-      <section class="hero section">
-        <div class="hero-copy" data-reveal>
-          <p class="eyebrow">Edicion para creadores, marcas y canales</p>
-          <h1>Videos que entran rapido, pegan fuerte y se quedan en la cabeza.</h1>
-          <p class="hero-text">
-            Reels, TikToks, shorts, gameplays, videos para YouTube y piezas profesionales con ritmo, limpieza visual y narrativa clara.
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__content">
+          <p class="eyebrow">Agustin Rovira Inmobiliaria</p>
+          <h1 id="hero-title">El camino mas directo para encontrar su inmueble</h1>
+          <p class="hero__lead">
+            Casas, departamentos, terrenos y campos seleccionados en Concordia y Entre Rios.
           </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#trabajos">Ver trabajos</a>
-            <a class="button secondary" href="#contacto">Pedir presupuesto</a>
+
+          <form class="search-panel" id="search-form" aria-label="Buscar inmuebles">
+            <label for="property-search">Buscar por palabra clave</label>
+            <div class="search-panel__row">
+              <input id="property-search" name="search" type="search" placeholder="Ej: casa, campo, Guemes, La Criolla">
+              <button type="submit">Buscar inmuebles</button>
+            </div>
+          </form>
+
+          <div class="hero__stats" aria-label="Resumen">
+            <span><strong>6</strong> destacados</span>
+            <span><strong>Concordia</strong> Entre Rios</span>
+            <span><strong>8 a 14 h</strong> Lun. a Vie.</span>
           </div>
         </div>
+      </section>
 
-        <div class="editor-stage" aria-label="Vista inspirada en un editor de video" data-reveal>
-          <div class="preview-window">
-            <div class="play-ring" aria-hidden="true"></div>
-            <span class="preview-label">REC 00:18</span>
-            <span class="preview-title">YT / Shorts / Gaming</span>
+      <section class="section intro" id="inmuebles">
+        <div>
+          <p class="eyebrow">Busqueda avanzada</p>
+          <h2>Propiedades listas para revisar</h2>
+        </div>
+        <p>
+          Filtre por provincia, ciudad, direccion, operacion, tipo de propiedad, zona y destino.
+        </p>
+      </section>
+
+      <section class="section listings" id="destacados" aria-labelledby="featured-title">
+        <div class="section-heading">
+          <p class="eyebrow">Inmuebles</p>
+          <h2 id="featured-title">Inmuebles publicados</h2>
+        </div>
+
+        <form class="filters" id="listing-filters" aria-label="Filtros de inmuebles">
+          <div class="filters__bar">
+            <label>
+              <span>Provincia</span>
+              <select name="province">
+                <option value="">Todas</option>
+                <option value="entre rios">Entre Rios</option>
+              </select>
+            </label>
+            <label>
+              <span>Ciudad</span>
+              <select name="city">
+                <option value="">Todas</option>
+                <option value="concordia">Concordia</option>
+                <option value="la criolla">La Criolla</option>
+                <option value="salto grande">Salto Grande</option>
+              </select>
+            </label>
+            <label class="filters__address">
+              <span>Direccion o palabra clave</span>
+              <input id="filter-address" name="address" type="search" placeholder="Guemes, campo, terreno...">
+            </label>
+            <button type="submit">Buscar</button>
           </div>
-          <div class="timeline" aria-hidden="true">
-            <span class="track video-track"></span>
-            <span class="track audio-track"></span>
-            <span class="track fx-track"></span>
-            <span class="playhead"></span>
+
+          <div class="filters-layout">
+            <aside class="filters-sidebar" aria-label="Filtros detallados">
+              <div class="filters-sidebar__top">
+                <strong>Filtros</strong>
+                <button type="reset">Eliminar filtros</button>
+              </div>
+
+              <fieldset>
+                <legend>Tipo de operacion</legend>
+                <label><input type="checkbox" name="operation" value="venta"> Venta</label>
+                <label><input type="checkbox" name="operation" value="alquiler"> Alquiler</label>
+                <label><input type="checkbox" name="operation" value="arrendamiento"> Arrendamiento</label>
+              </fieldset>
+
+              <fieldset>
+                <legend>Tipo de propiedad</legend>
+                <label><input type="checkbox" name="property" value="casa"> Casa</label>
+                <label><input type="checkbox" name="property" value="departamento"> Departamento</label>
+                <label><input type="checkbox" name="property" value="terreno"> Terreno</label>
+                <label><input type="checkbox" name="property" value="campo"> Campo</label>
+                <label><input type="checkbox" name="property" value="duplex"> Duplex</label>
+              </fieldset>
+
+              <fieldset>
+                <legend>Tipo de zona</legend>
+                <label><input type="checkbox" name="zone" value="urbana"> Urbana</label>
+                <label><input type="checkbox" name="zone" value="residencial"> Residencial</label>
+                <label><input type="checkbox" name="zone" value="rural"> Rural</label>
+              </fieldset>
+
+              <fieldset>
+                <legend>Condicion del inmueble</legend>
+                <label><input type="checkbox" name="condition" value="bueno"> Bueno</label>
+                <label><input type="checkbox" name="condition" value="muy bueno"> Muy bueno</label>
+                <label><input type="checkbox" name="condition" value="excelente"> Excelente</label>
+              </fieldset>
+
+              <fieldset>
+                <legend>Ubicacion</legend>
+                <label><input type="checkbox" name="location" value="urbana"> Urbana</label>
+                <label><input type="checkbox" name="location" value="rural"> Rural</label>
+              </fieldset>
+
+              <fieldset>
+                <legend>Destino</legend>
+                <label><input type="checkbox" name="purpose" value="vivienda"> Vivienda</label>
+                <label><input type="checkbox" name="purpose" value="habitacion"> Habitacion</label>
+                <label><input type="checkbox" name="purpose" value="mixto"> Mixto</label>
+                <label><input type="checkbox" name="purpose" value="forestal"> Forestal</label>
+              </fieldset>
+            </aside>
+
+            <div class="results">
+              <div class="results__top">
+                <p><strong id="result-count">6</strong> resultados</p>
+                <div class="pagination" aria-label="Paginacion">
+                  <span>Anterior</span>
+                  <strong>1</strong>
+                  <span>Siguiente</span>
+                </div>
+              </div>
+
+              <div class="listing-grid" id="listing-grid">
+                <article class="listing" data-search="casa vivienda guemes 84 concordia entre rios venta urbana residencial bueno" data-operation="venta" data-property="casa" data-zone="urbana residencial" data-condition="bueno" data-location="urbana" data-purpose="vivienda" data-city="concordia" data-province="entre rios">
+                  <a class="listing__image" href="https://inmobiliariarovira.com.ar/inmuebles/2f89b2f28ddaa9eb8cef3ef906d74489">
+                    <img src="https://grinmer.ingeniocloud.ar/web/image?model=ing.inmueble&amp;id=1151&amp;field=imagen_portada" alt="Casa en Guemes 84">
+                  </a>
+                  <div class="listing__body">
+                    <div class="listing__meta"><span>N 1315-45</span><span>Venta</span></div>
+                    <h3>Guemes 84</h3>
+                    <p>Casa vivienda en Concordia, Entre Rios.</p>
+                    <a href="https://inmobiliariarovira.com.ar/inmuebles/2f89b2f28ddaa9eb8cef3ef906d74489">Ver detalles</a>
+                  </div>
+                </article>
+
+                <article class="listing" data-search="departamento vivienda sarmiento saavedra concordia entre rios venta urbana residencial muy bueno" data-operation="venta" data-property="departamento" data-zone="urbana residencial" data-condition="muy bueno" data-location="urbana" data-purpose="vivienda" data-city="concordia" data-province="entre rios">
+                  <a class="listing__image" href="https://inmobiliariarovira.com.ar/inmuebles/3edadb3c8517760b59cf80a7eb7a68e6">
+                    <img src="https://grinmer.ingeniocloud.ar/web/image?model=ing.inmueble&amp;id=1093&amp;field=imagen_portada" alt="Departamento en Sarmiento y Saavedra">
+                  </a>
+                  <div class="listing__body">
+                    <div class="listing__meta"><span>N 1315-118</span><span>Venta</span></div>
+                    <h3>Sarmiento y Saavedra</h3>
+                    <p>Departamento vivienda en Concordia, Entre Rios.</p>
+                    <a href="https://inmobiliariarovira.com.ar/inmuebles/3edadb3c8517760b59cf80a7eb7a68e6">Ver detalles</a>
+                  </div>
+                </article>
+
+                <article class="listing" data-search="terreno mixto lago salto grande entre rios venta rural mixto bueno" data-operation="venta" data-property="terreno" data-zone="rural" data-condition="bueno" data-location="rural" data-purpose="mixto" data-city="salto grande" data-province="entre rios">
+                  <a class="listing__image" href="https://inmobiliariarovira.com.ar/inmuebles/f3d521c808ea2051a7c111ef8e1db158">
+                    <img src="https://grinmer.ingeniocloud.ar/web/image?model=ing.inmueble&amp;id=1077&amp;field=imagen_portada" alt="Terreno en Lago de Salto Grande">
+                  </a>
+                  <div class="listing__body">
+                    <div class="listing__meta"><span>N 1315-19</span><span>Venta</span></div>
+                    <h3>Lago de Salto Grande</h3>
+                    <p>Terreno mixto en Entre Rios.</p>
+                    <a href="https://inmobiliariarovira.com.ar/inmuebles/f3d521c808ea2051a7c111ef8e1db158">Ver detalles</a>
+                  </div>
+                </article>
+
+                <article class="listing" data-search="departamento vivienda h primo rawson entre rios venta urbana residencial bueno" data-operation="venta" data-property="departamento" data-zone="urbana residencial" data-condition="bueno" data-location="urbana" data-purpose="vivienda" data-city="concordia" data-province="entre rios">
+                  <a class="listing__image" href="https://inmobiliariarovira.com.ar/inmuebles/6a51635050d799986cec90a109396371">
+                    <img src="https://grinmer.ingeniocloud.ar/web/image?model=ing.inmueble&amp;id=1069&amp;field=imagen_portada" alt="Departamento en H. Primo y Rawson">
+                  </a>
+                  <div class="listing__body">
+                    <div class="listing__meta"><span>N 1315-20</span><span>Venta</span></div>
+                    <h3>H. Primo y Rawson</h3>
+                    <p>Departamento vivienda en Entre Rios.</p>
+                    <a href="https://inmobiliariarovira.com.ar/inmuebles/6a51635050d799986cec90a109396371">Ver detalles</a>
+                  </div>
+                </article>
+
+                <article class="listing" data-search="casa habitacion carriego la rioja entre rios venta urbana residencial bueno" data-operation="venta" data-property="casa" data-zone="urbana residencial" data-condition="bueno" data-location="urbana" data-purpose="habitacion" data-city="concordia" data-province="entre rios">
+                  <a class="listing__image" href="https://inmobiliariarovira.com.ar/inmuebles/fbba5f076600539fbc7f04dbf4bfa37b">
+                    <img src="https://grinmer.ingeniocloud.ar/web/image?model=ing.inmueble&amp;id=1067&amp;field=imagen_portada" alt="Casa en Carriego casi esquina La Rioja">
+                  </a>
+                  <div class="listing__body">
+                    <div class="listing__meta"><span>N 1315-5</span><span>Venta</span></div>
+                    <h3>Carriego, casi esquina La Rioja</h3>
+                    <p>Casa habitacion en Entre Rios.</p>
+                    <a href="https://inmobiliariarovira.com.ar/inmuebles/fbba5f076600539fbc7f04dbf4bfa37b">Ver detalles</a>
+                  </div>
+                </article>
+
+                <article class="listing" data-search="campo forestal la criolla citricultura concordia entre rios venta rural excelente forestal" data-operation="venta" data-property="campo" data-zone="rural" data-condition="excelente" data-location="rural" data-purpose="forestal" data-city="la criolla" data-province="entre rios">
+                  <a class="listing__image" href="https://inmobiliariarovira.com.ar/inmuebles/f8090257f5346450f493a2ebf950d425">
+                    <img src="https://grinmer.ingeniocloud.ar/web/image?model=ing.inmueble&amp;id=1057&amp;field=imagen_portada" alt="Campo forestal en La Criolla">
+                  </a>
+                  <div class="listing__body">
+                    <div class="listing__meta"><span>N 1315-3</span><span>Venta</span></div>
+                    <h3>La Criolla</h3>
+                    <p>Campo forestal de 100 hectareas con citricultura, forestacion y riego.</p>
+                    <a href="https://inmobiliariarovira.com.ar/inmuebles/f8090257f5346450f493a2ebf950d425">Ver detalles</a>
+                  </div>
+                </article>
+              </div>
+            </div>
           </div>
-          <ul class="quick-stats" aria-label="Especialidades">
-            <li><strong>9:16</strong><span>social</span></li>
-            <li><strong>16:9</strong><span>YouTube</span></li>
-            <li><strong>4K</strong><span>export</span></li>
+        </form>
+        <p class="empty-state" id="empty-state" hidden>No encontramos propiedades para esa busqueda.</p>
+      </section>
+
+      <section class="section feature" id="nosotros">
+        <div class="feature__image" aria-hidden="true"></div>
+        <div class="feature__content">
+          <p class="eyebrow">Quienes somos</p>
+          <h2>Experiencia urbana y rural en Concordia y la region</h2>
+          <p>
+            Agustin Rovira - Casas y Campos es una inmobiliaria con sede en Concordia, Entre Rios,
+            conformada por un equipo multidisciplinario con experiencia tanto en el mercado urbano
+            como en el rural.
+          </p>
+          <a class="text-link" href="#contacto">Coordinar una consulta</a>
+        </div>
+      </section>
+
+      <section class="section about" aria-labelledby="about-title">
+        <div class="about__intro">
+          <p class="eyebrow">Casas y Campos</p>
+          <h2 id="about-title">Cercania, transparencia y compromiso</h2>
+        </div>
+        <div class="about__grid">
+          <article class="about-card">
+            <span>01</span>
+            <h3>Nuestra mision</h3>
+            <p>
+              Brindar un servicio inmobiliario personalizado, confiable y profesional, acompanando
+              a cada cliente en sus operaciones urbanas y rurales con cercania, transparencia y
+              compromiso.
+            </p>
+          </article>
+          <article class="about-card">
+            <span>02</span>
+            <h3>Nuestra vision</h3>
+            <p>
+              Consolidarnos como la referencia inmobiliaria en Concordia y la region, reconocidos por
+              la cercania, la calidad del servicio y la integracion equilibrada entre el mercado urbano
+              y rural.
+            </p>
+          </article>
+          <article class="about-card about-card--wide">
+            <span>03</span>
+            <h3>Nuestra historia</h3>
+            <p>
+              Brindamos un servicio personalizado a una amplia diversidad de clientes. Creemos en la
+              importancia de adaptarnos a las necesidades del mercado y de cada persona, optimizando
+              procesos y fomentando la eficiencia.
+            </p>
+            <p>
+              Valoramos la colaboracion y el trabajo en equipo para construir relaciones solidas y
+              duraderas con clientes y aliados estrategicos. Nuestra fortaleza es la cercania: un
+              acompanamiento constante y coherente en cada instancia del proceso inmobiliario.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact" id="contacto">
+        <div>
+          <p class="eyebrow">Contacto</p>
+          <h2>Hablemos de su proxima propiedad</h2>
+          <div class="contact-actions">
+            <a class="button button--primary" href="https://wa.me/+543454939946">WhatsApp</a>
+            <a class="button button--secondary" href="tel:+543454939946">+54 345 4939946</a>
+          </div>
+          <ul class="contact-list">
+            <li>Entre Rios 1486, Concordia</li>
+            <li>Lunes a Viernes de 8:00 a 14:00</li>
+            <li><a href="https://www.instagram.com/ar.casasycampos/">Instagram: ar.casasycampos</a></li>
+            <li><a href="https://facebook.com/arcasasycampos">Facebook: arcasasycampos</a></li>
           </ul>
         </div>
-      </section>
-
-      <section class="section reel-strip" aria-label="Tipos de edicion" data-reveal>
-        <span>Hook</span>
-        <span>Subtitulos</span>
-        <span>Memes</span>
-        <span>Sound design</span>
-        <span>Color</span>
-        <span>Motion graphics</span>
-      </section>
-
-      <section class="section" id="trabajos">
-        <div class="section-heading" data-reveal>
-          <p class="eyebrow">Portfolio</p>
-          <h2>Cortes para formatos que compiten por atencion.</h2>
-        </div>
-        <div class="work-grid">
-          <article class="work-card tall" data-reveal>
-            <span class="card-tag">Reels / TikTok</span>
-            <h3>Micro historias para scrollear menos y mirar mas.</h3>
-            <p>Hooks rapidos, subtitulos grandes, zooms, remates visuales y ritmo pensado para retencion.</p>
-          </article>
-          <article class="work-card" data-reveal>
-            <span class="card-tag">Gaming</span>
-            <h3>Gameplays con timing de clip.</h3>
-            <p>Kills, fails, reacciones, memes, SFX y cortes precisos sin matar la energia del gameplay.</p>
-          </article>
-          <article class="work-card accent" data-reveal>
-            <span class="card-tag">YouTube</span>
-            <h3>Videos largos con estructura.</h3>
-            <p>Intro, desarrollo, B-roll, lower thirds, transiciones limpias y cierres listos para CTA.</p>
-          </article>
-          <article class="work-card" data-reveal>
-            <span class="card-tag">Profesional</span>
-            <h3>Marca clara, audio limpio y ritmo sobrio.</h3>
-            <p>Edicion para presentaciones, cursos, entrevistas, anuncios y contenido institucional.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section split" id="servicios">
-        <div data-reveal>
-          <p class="eyebrow">Servicios</p>
-          <h2>De material crudo a pieza publicable.</h2>
-        </div>
-        <div class="service-list">
-          <article data-reveal>
-            <span>01</span>
-            <h3>Edicion para redes</h3>
-            <p>Versiones verticales, subtitulos, cortes dinamicos, encuadres y entregas listas para publicar.</p>
-          </article>
-          <article data-reveal>
-            <span>02</span>
-            <h3>Videos de YouTube</h3>
-            <p>Armado de narrativa, limpieza de pausas, B-roll, inserts, musica, SFX y estructura por capitulos.</p>
-          </article>
-          <article data-reveal>
-            <span>03</span>
-            <h3>Gaming highlights</h3>
-            <p>Montajes de stream, compilados, intros, momentos clave, memes y punchlines visuales.</p>
-          </article>
-          <article data-reveal>
-            <span>04</span>
-            <h3>Motion y piezas graficas</h3>
-            <p>Animaciones simples, overlays, placas, miniaturas, lower thirds y recursos para marca.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section tools" id="herramientas">
-        <div class="section-heading" data-reveal>
-          <p class="eyebrow">Workflow</p>
-          <h2>Referencias de edicion y postproduccion.</h2>
-        </div>
-        <div class="tool-board" data-reveal>
-          <article>
-            <span class="tool-chip pr">Pr</span>
-            <h3>Premiere Pro</h3>
-            <p>Cortes, ritmo, audio, estructura, proxies y exportaciones para cada plataforma.</p>
-          </article>
-          <article>
-            <span class="tool-chip ae">Ae</span>
-            <h3>After Effects</h3>
-            <p>Motion graphics, textos animados, transiciones, overlays y composiciones con impacto.</p>
-          </article>
-          <article>
-            <span class="tool-chip ps">Ps</span>
-            <h3>Photoshop</h3>
-            <p>Miniaturas, piezas de apoyo, cleanups, composiciones y recursos visuales para marca.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section process">
-        <div class="section-heading" data-reveal>
-          <p class="eyebrow">Proceso</p>
-          <h2>Ordenado para avanzar sin vueltas.</h2>
-        </div>
-        <ol class="process-list">
-          <li data-reveal><span>Brief</span>Objetivo, referencias, formato, duracion y tono.</li>
-          <li data-reveal><span>Rough cut</span>Primer armado con estructura, ritmo y momentos clave.</li>
-          <li data-reveal><span>Polish</span>Grafica, subtitulos, SFX, musica, color y ajustes finales.</li>
-          <li data-reveal><span>Entrega</span>Export optimizado para Instagram, TikTok, YouTube o ads.</li>
-        </ol>
-      </section>
-
-      <section class="section contact" id="contacto" data-reveal>
-        <p class="eyebrow">Contacto</p>
-        <h2>Mandame el material y lo convertimos en contenido listo para publicar.</h2>
-        <p>Decime plataforma, duracion, estilo de referencia y fecha ideal de entrega.</p>
-        <div class="contact-actions">
-          <a class="button primary" href="mailto:contacto@nianocuts.com">contacto@nianocuts.com</a>
-          <a class="button secondary" href="https://wa.me/5491112345678" rel="noreferrer">WhatsApp</a>
-        </div>
+        <iframe
+          title="Mapa de Agustin Rovira Inmobiliaria"
+          src="https://maps.google.com/maps?q=Entre%20rios%201486%2C%20concordia%20&amp;t=m&amp;z=17&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+          loading="lazy"
+        ></iframe>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span>Niano Cuts</span>
-      <span>Reels, YouTube, gaming y contenido profesional.</span>
+      <p>Agustin Rovira Inmobiliaria - Casas y Campos</p>
+      <a href="#inicio">Volver arriba</a>
     </footer>
 
+    <a class="whatsapp" href="https://wa.me/+543454939946" aria-label="Contactar por WhatsApp">WhatsApp</a>
     <script src="script.js"></script>
   </body>
 </html>
