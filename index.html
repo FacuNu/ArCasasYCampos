@@ -18,15 +18,24 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#inicio" aria-label="Agustin Rovira Inmobiliaria">
+      <a class="brand" href="index.html#inicio" aria-label="Agustin Rovira Inmobiliaria">
         <img src="https://inmobiliariarovira.com.ar/web/image/website/1/logo?unique=e4ae51f" alt="Agustin Rovira Inmobiliaria">
         <span>Casas y Campos</span>
       </a>
-      <nav class="main-nav" aria-label="Principal">
-        <a href="#inmuebles">Inmuebles</a>
-        <a href="#destacados">Destacados</a>
-        <a href="#nosotros">Quienes somos</a>
-        <a href="#contacto">Contacto</a>
+      <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false">
+        <span class="menu-toggle__icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        Menu
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Principal">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="inmuebles.html">Inmuebles</a>
+        <a href="inmuebles.html">Destacados</a>
+        <a href="index.html#nosotros">Quienes somos</a>
+        <a href="index.html#contacto">Contacto</a>
       </nav>
       <a class="nav-action" href="https://wa.me/+543454939946">Consultar</a>
     </header>
@@ -61,181 +70,12 @@
           <p class="eyebrow">Busqueda avanzada</p>
           <h2>Propiedades listas para revisar</h2>
         </div>
-        <p>
-          Filtre por provincia, ciudad, direccion, operacion, tipo de propiedad, zona y destino.
-        </p>
-      </section>
-
-      <section class="section listings" id="destacados" aria-labelledby="featured-title">
-        <div class="section-heading">
-          <p class="eyebrow">Inmuebles</p>
-          <h2 id="featured-title">Inmuebles publicados</h2>
+        <div>
+          <p>
+            Filtre por provincia, ciudad, direccion, operacion, tipo de propiedad, zona y destino en una pantalla dedicada.
+          </p>
+          <a class="button button--primary" href="inmuebles.html">Ver inmuebles</a>
         </div>
-
-        <form class="filters" id="listing-filters" aria-label="Filtros de inmuebles">
-          <div class="filters__bar">
-            <label>
-              <span>Provincia</span>
-              <select name="province">
-                <option value="">Todas</option>
-                <option value="entre rios">Entre Rios</option>
-              </select>
-            </label>
-            <label>
-              <span>Ciudad</span>
-              <select name="city">
-                <option value="">Todas</option>
-                <option value="concordia">Concordia</option>
-                <option value="la criolla">La Criolla</option>
-                <option value="salto grande">Salto Grande</option>
-              </select>
-            </label>
-            <label class="filters__address">
-              <span>Direccion o palabra clave</span>
-              <input id="filter-address" name="address" type="search" placeholder="Guemes, campo, terreno...">
-            </label>
-            <button type="submit">Buscar</button>
-          </div>
-
-          <div class="filters-layout">
-            <aside class="filters-sidebar" aria-label="Filtros detallados">
-              <div class="filters-sidebar__top">
-                <strong>Filtros</strong>
-                <button type="reset">Eliminar filtros</button>
-              </div>
-
-              <fieldset>
-                <legend>Tipo de operacion</legend>
-                <label><input type="checkbox" name="operation" value="venta"> Venta</label>
-                <label><input type="checkbox" name="operation" value="alquiler"> Alquiler</label>
-                <label><input type="checkbox" name="operation" value="arrendamiento"> Arrendamiento</label>
-              </fieldset>
-
-              <fieldset>
-                <legend>Tipo de propiedad</legend>
-                <label><input type="checkbox" name="property" value="casa"> Casa</label>
-                <label><input type="checkbox" name="property" value="departamento"> Departamento</label>
-                <label><input type="checkbox" name="property" value="terreno"> Terreno</label>
-                <label><input type="checkbox" name="property" value="campo"> Campo</label>
-                <label><input type="checkbox" name="property" value="duplex"> Duplex</label>
-              </fieldset>
-
-              <fieldset>
-                <legend>Tipo de zona</legend>
-                <label><input type="checkbox" name="zone" value="urbana"> Urbana</label>
-                <label><input type="checkbox" name="zone" value="residencial"> Residencial</label>
-                <label><input type="checkbox" name="zone" value="rural"> Rural</label>
-              </fieldset>
-
-              <fieldset>
-                <legend>Condicion del inmueble</legend>
-                <label><input type="checkbox" name="condition" value="bueno"> Bueno</label>
-                <label><input type="checkbox" name="condition" value="muy bueno"> Muy bueno</label>
-                <label><input type="checkbox" name="condition" value="excelente"> Excelente</label>
-              </fieldset>
-
-              <fieldset>
-                <legend>Ubicacion</legend>
-                <label><input type="checkbox" name="location" value="urbana"> Urbana</label>
-                <label><input type="checkbox" name="location" value="rural"> Rural</label>
-              </fieldset>
-
-              <fieldset>
-                <legend>Destino</legend>
-                <label><input type="checkbox" name="purpose" value="vivienda"> Vivienda</label>
-                <label><input type="checkbox" name="purpose" value="habitacion"> Habitacion</label>
-                <label><input type="checkbox" name="purpose" value="mixto"> Mixto</label>
-                <label><input type="checkbox" name="purpose" value="forestal"> Forestal</label>
-              </fieldset>
-            </aside>
-
-            <div class="results">
-              <div class="results__top">
-                <p><strong id="result-count">6</strong> resultados</p>
-                <div class="pagination" aria-label="Paginacion">
-                  <span>Anterior</span>
-                  <strong>1</strong>
-                  <span>Siguiente</span>
-                </div>
-              </div>
-
-              <div class="listing-grid" id="listing-grid">
-                <article class="listing" data-search="casa vivienda guemes 84 concordia entre rios venta urbana residencial bueno" data-operation="venta" data-property="casa" data-zone="urbana residencial" data-condition="bueno" data-location="urbana" data-purpose="vivienda" data-city="concordia" data-province="entre rios">
-                  <a class="listing__image" href="https://inmobiliariarovira.com.ar/inmuebles/2f89b2f28ddaa9eb8cef3ef906d74489">
-                    <img src="https://grinmer.ingeniocloud.ar/web/image?model=ing.inmueble&amp;id=1151&amp;field=imagen_portada" alt="Casa en Guemes 84">
-                  </a>
-                  <div class="listing__body">
-                    <div class="listing__meta"><span>N 1315-45</span><span>Venta</span></div>
-                    <h3>Guemes 84</h3>
-                    <p>Casa vivienda en Concordia, Entre Rios.</p>
-                    <a href="https://inmobiliariarovira.com.ar/inmuebles/2f89b2f28ddaa9eb8cef3ef906d74489">Ver detalles</a>
-                  </div>
-                </article>
-
-                <article class="listing" data-search="departamento vivienda sarmiento saavedra concordia entre rios venta urbana residencial muy bueno" data-operation="venta" data-property="departamento" data-zone="urbana residencial" data-condition="muy bueno" data-location="urbana" data-purpose="vivienda" data-city="concordia" data-province="entre rios">
-                  <a class="listing__image" href="https://inmobiliariarovira.com.ar/inmuebles/3edadb3c8517760b59cf80a7eb7a68e6">
-                    <img src="https://grinmer.ingeniocloud.ar/web/image?model=ing.inmueble&amp;id=1093&amp;field=imagen_portada" alt="Departamento en Sarmiento y Saavedra">
-                  </a>
-                  <div class="listing__body">
-                    <div class="listing__meta"><span>N 1315-118</span><span>Venta</span></div>
-                    <h3>Sarmiento y Saavedra</h3>
-                    <p>Departamento vivienda en Concordia, Entre Rios.</p>
-                    <a href="https://inmobiliariarovira.com.ar/inmuebles/3edadb3c8517760b59cf80a7eb7a68e6">Ver detalles</a>
-                  </div>
-                </article>
-
-                <article class="listing" data-search="terreno mixto lago salto grande entre rios venta rural mixto bueno" data-operation="venta" data-property="terreno" data-zone="rural" data-condition="bueno" data-location="rural" data-purpose="mixto" data-city="salto grande" data-province="entre rios">
-                  <a class="listing__image" href="https://inmobiliariarovira.com.ar/inmuebles/f3d521c808ea2051a7c111ef8e1db158">
-                    <img src="https://grinmer.ingeniocloud.ar/web/image?model=ing.inmueble&amp;id=1077&amp;field=imagen_portada" alt="Terreno en Lago de Salto Grande">
-                  </a>
-                  <div class="listing__body">
-                    <div class="listing__meta"><span>N 1315-19</span><span>Venta</span></div>
-                    <h3>Lago de Salto Grande</h3>
-                    <p>Terreno mixto en Entre Rios.</p>
-                    <a href="https://inmobiliariarovira.com.ar/inmuebles/f3d521c808ea2051a7c111ef8e1db158">Ver detalles</a>
-                  </div>
-                </article>
-
-                <article class="listing" data-search="departamento vivienda h primo rawson entre rios venta urbana residencial bueno" data-operation="venta" data-property="departamento" data-zone="urbana residencial" data-condition="bueno" data-location="urbana" data-purpose="vivienda" data-city="concordia" data-province="entre rios">
-                  <a class="listing__image" href="https://inmobiliariarovira.com.ar/inmuebles/6a51635050d799986cec90a109396371">
-                    <img src="https://grinmer.ingeniocloud.ar/web/image?model=ing.inmueble&amp;id=1069&amp;field=imagen_portada" alt="Departamento en H. Primo y Rawson">
-                  </a>
-                  <div class="listing__body">
-                    <div class="listing__meta"><span>N 1315-20</span><span>Venta</span></div>
-                    <h3>H. Primo y Rawson</h3>
-                    <p>Departamento vivienda en Entre Rios.</p>
-                    <a href="https://inmobiliariarovira.com.ar/inmuebles/6a51635050d799986cec90a109396371">Ver detalles</a>
-                  </div>
-                </article>
-
-                <article class="listing" data-search="casa habitacion carriego la rioja entre rios venta urbana residencial bueno" data-operation="venta" data-property="casa" data-zone="urbana residencial" data-condition="bueno" data-location="urbana" data-purpose="habitacion" data-city="concordia" data-province="entre rios">
-                  <a class="listing__image" href="https://inmobiliariarovira.com.ar/inmuebles/fbba5f076600539fbc7f04dbf4bfa37b">
-                    <img src="https://grinmer.ingeniocloud.ar/web/image?model=ing.inmueble&amp;id=1067&amp;field=imagen_portada" alt="Casa en Carriego casi esquina La Rioja">
-                  </a>
-                  <div class="listing__body">
-                    <div class="listing__meta"><span>N 1315-5</span><span>Venta</span></div>
-                    <h3>Carriego, casi esquina La Rioja</h3>
-                    <p>Casa habitacion en Entre Rios.</p>
-                    <a href="https://inmobiliariarovira.com.ar/inmuebles/fbba5f076600539fbc7f04dbf4bfa37b">Ver detalles</a>
-                  </div>
-                </article>
-
-                <article class="listing" data-search="campo forestal la criolla citricultura concordia entre rios venta rural excelente forestal" data-operation="venta" data-property="campo" data-zone="rural" data-condition="excelente" data-location="rural" data-purpose="forestal" data-city="la criolla" data-province="entre rios">
-                  <a class="listing__image" href="https://inmobiliariarovira.com.ar/inmuebles/f8090257f5346450f493a2ebf950d425">
-                    <img src="https://grinmer.ingeniocloud.ar/web/image?model=ing.inmueble&amp;id=1057&amp;field=imagen_portada" alt="Campo forestal en La Criolla">
-                  </a>
-                  <div class="listing__body">
-                    <div class="listing__meta"><span>N 1315-3</span><span>Venta</span></div>
-                    <h3>La Criolla</h3>
-                    <p>Campo forestal de 100 hectareas con citricultura, forestacion y riego.</p>
-                    <a href="https://inmobiliariarovira.com.ar/inmuebles/f8090257f5346450f493a2ebf950d425">Ver detalles</a>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </form>
-        <p class="empty-state" id="empty-state" hidden>No encontramos propiedades para esa busqueda.</p>
       </section>
 
       <section class="section feature" id="nosotros">
@@ -321,7 +161,12 @@
       <a href="#inicio">Volver arriba</a>
     </footer>
 
-    <a class="whatsapp" href="https://wa.me/+543454939946" aria-label="Contactar por WhatsApp">WhatsApp</a>
+    <a class="whatsapp" href="https://wa.me/+543454939946" aria-label="Contactar por WhatsApp">
+      <svg aria-hidden="true" viewBox="0 0 32 32">
+        <path d="M16.01 3.2A12.74 12.74 0 0 0 5.07 22.45L3.7 28.8l6.46-1.3A12.77 12.77 0 1 0 16.01 3.2Zm0 22.95c-1.95 0-3.76-.55-5.31-1.5l-.38-.24-3.83.77.81-3.73-.25-.39a10.2 10.2 0 1 1 8.96 5.09Zm5.75-7.66c-.31-.16-1.86-.91-2.15-1.02-.29-.1-.5-.16-.71.16-.2.31-.81 1.01-.99 1.22-.18.2-.36.23-.68.07-.31-.16-1.32-.49-2.52-1.56-.93-.83-1.56-1.86-1.74-2.17-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.2-.31.31-.52.1-.2.05-.39-.03-.54-.08-.16-.71-1.72-.97-2.35-.26-.62-.52-.53-.71-.54h-.6c-.2 0-.54.08-.83.39-.29.31-1.09 1.07-1.09 2.6 0 1.53 1.12 3.01 1.27 3.22.16.2 2.2 3.36 5.33 4.71.75.32 1.33.51 1.78.65.75.24 1.43.2 1.97.12.6-.09 1.86-.76 2.12-1.5.26-.73.26-1.36.18-1.5-.08-.13-.29-.2-.6-.36Z"/>
+      </svg>
+      WhatsApp
+    </a>
     <script src="script.js"></script>
   </body>
 </html>

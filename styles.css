@@ -89,6 +89,34 @@ img {
   font-weight: 700;
 }
 
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.menu-toggle__icon {
+  display: grid;
+  gap: 3px;
+}
+
+.menu-toggle__icon span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
 .main-nav a,
 .nav-action,
 .listing a,
@@ -132,9 +160,7 @@ img {
 .button--primary:hover,
 .button--primary:focus-visible,
 .search-panel button:hover,
-.search-panel button:focus-visible,
-.whatsapp:hover,
-.whatsapp:focus-visible {
+.search-panel button:focus-visible {
   background: var(--brand-dark);
 }
 
@@ -266,6 +292,28 @@ a:focus-visible {
 
 .hero__stats strong {
   color: #fff;
+}
+
+.page-hero {
+  display: grid;
+  align-content: end;
+  min-height: 54vh;
+  padding: 150px max(24px, calc((100vw - 1180px) / 2)) 56px;
+  background:
+    linear-gradient(90deg, rgba(14, 12, 10, 0.82), rgba(14, 12, 10, 0.34)),
+    url("https://inmobiliariarovira.com.ar/web/image/2214-11e07218/2.jpg") center / cover;
+  color: #fff;
+}
+
+.page-hero .eyebrow {
+  color: var(--brand-light);
+}
+
+.page-hero p:not(.eyebrow) {
+  max-width: 680px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.08rem;
+  line-height: 1.7;
 }
 
 .section {
@@ -759,28 +807,60 @@ a:focus-visible {
   right: 18px;
   bottom: 18px;
   z-index: 25;
-  padding: 14px 18px;
-  background: var(--brand);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 16px;
+  background: #25d366;
   color: #fff;
   box-shadow: var(--shadow);
 }
 
+.whatsapp svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+
+.whatsapp:hover,
+.whatsapp:focus-visible {
+  background: #1ebe5d;
+}
+
 @media (max-width: 920px) {
   .site-header {
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
   }
 
   .main-nav {
     order: 3;
     width: 100%;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 4px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 8px;
+  }
+
+  .site-header.is-menu-open .main-nav {
+    display: flex;
+  }
+
+  .main-nav a {
+    padding: 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .nav-action {
-    margin-left: auto;
+    order: 2;
+    margin-left: 0;
   }
 
   .hero {
@@ -811,10 +891,16 @@ a:focus-visible {
 }
 
 @media (max-width: 640px) {
+  body {
+    font-size: 15px;
+  }
+
   .site-header {
     top: 10px;
     left: 10px;
     right: 10px;
+    gap: 10px;
+    min-height: 0;
     padding: 10px;
   }
 
@@ -822,31 +908,116 @@ a:focus-visible {
     min-width: 0;
   }
 
+  .brand img {
+    width: 40px;
+    height: 40px;
+  }
+
   .brand span {
     display: none;
   }
 
   .main-nav {
-    gap: 16px;
-    font-size: 0.86rem;
+    gap: 10px;
+    font-size: 0.82rem;
+  }
+
+  .main-nav a {
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.07);
   }
 
   .nav-action {
-    padding: 12px 14px;
+    display: none;
+    min-height: 40px;
+    padding: 10px 12px;
+    font-size: 0.86rem;
   }
 
   .hero {
-    min-height: 94vh;
-    padding: 170px 18px 36px;
+    min-height: 100svh;
+    padding: 112px 16px 28px;
+    background-position: 58% center;
+  }
+
+  .page-hero {
+    min-height: 48vh;
+    padding: 122px 16px 38px;
   }
 
   h1 {
-    font-size: 2.45rem;
+    font-size: 2.32rem;
+    line-height: 0.98;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  .hero__lead {
+    margin: 16px 0 18px;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  .search-panel {
+    padding: 12px;
   }
 
   .search-panel__row,
   .listing-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero__stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .hero__stats span {
+    padding: 9px 11px;
+  }
+
+  .filters__bar {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .filters__bar input,
+  .filters__bar select,
+  .filters__bar button {
+    min-height: 46px;
+  }
+
+  .filters-sidebar {
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .filters-sidebar fieldset {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .filters-sidebar legend {
+    grid-column: 1 / -1;
+  }
+
+  .filters-sidebar label {
+    min-height: 40px;
+    align-items: center;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    font-size: 0.86rem;
   }
 
   .results__top {
@@ -857,6 +1028,7 @@ a:focus-visible {
   .pagination {
     width: 100%;
     overflow-x: auto;
+    padding-bottom: 2px;
   }
 
   .search-panel button {
@@ -865,7 +1037,20 @@ a:focus-visible {
 
   .section {
     width: min(100% - 28px, 1180px);
-    padding: 56px 0;
+    padding: 46px 0;
+  }
+
+  .intro {
+    gap: 16px;
+  }
+
+  .listing__body {
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .feature {
+    gap: 16px;
   }
 
   .feature__image,
@@ -873,12 +1058,67 @@ a:focus-visible {
     min-height: 300px;
   }
 
+  .feature__content,
+  .about-card,
+  .contact > div {
+    padding: 22px;
+  }
+
+  .about {
+    gap: 18px;
+  }
+
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card--wide {
+    grid-column: auto;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+
   .contact {
     padding: 12px;
+  }
+
+  .whatsapp {
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 14px;
+    font-size: 0.9rem;
   }
 
   .site-footer {
     flex-direction: column;
     width: min(100% - 28px, 1180px);
+  }
+}
+
+@media (max-width: 390px) {
+  .hero {
+    padding-top: 108px;
+  }
+
+  h1 {
+    font-size: 2.08rem;
+  }
+
+  .main-nav {
+    gap: 8px;
+  }
+
+  .main-nav a {
+    padding: 7px 8px;
+  }
+
+  .filters-sidebar fieldset {
+    grid-template-columns: 1fr;
   }
 }
